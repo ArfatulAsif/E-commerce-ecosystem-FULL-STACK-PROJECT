@@ -3,24 +3,11 @@ import { createRoot } from 'react-dom/client'
 import {
   RouterProvider,
 } from "react-router-dom";
+import router from './routes/Router';
 
 
 
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element:<p> Hello world </p>
-  },
-  {
-    path: "/dashboard",
-    element: <div>This is dashboard</div>
-  }
-  {
-    path : "/test",
-    element: <div>HI </div>
-  }
-]);
 
 
 
