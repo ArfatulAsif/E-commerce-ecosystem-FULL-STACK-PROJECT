@@ -1,6 +1,6 @@
 const Navbar = () => {
         return (
-                <div>
+                <div className="bg-red-600">
                         <h1>
                                 This is navbar
                         </h1>
@@ -8,4 +8,4 @@ const Navbar = () => {
         )
 };
 
-export default Navbar;
+export default Navbar; 
