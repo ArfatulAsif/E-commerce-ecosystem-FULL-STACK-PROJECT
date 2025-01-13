@@ -1,7 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import {
-  createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 
@@ -16,8 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <div>This is dashboard</div>
-  },
-  
+  }
   {
     path : "/test",
     element: <div>HI </div>
