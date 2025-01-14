@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     userType: { type: String, enum: ['admin', 'supplier', 'customer'], required: true },
-    bankAccountNumber: { type: String, required: false },
+    bankAccountNumber: { type: String, required: false }, // for customer no bank account is needed
 });
 
 const User = mongoose.model('User', userSchema);
