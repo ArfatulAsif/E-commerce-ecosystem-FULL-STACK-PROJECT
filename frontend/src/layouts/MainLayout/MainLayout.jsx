@@ -3,16 +3,19 @@ import Navbar from "../../components/shared/Navbar/Navbar";
 import Footer from "../../components/shared/Footer/Footer";
 
 const MainLayout = () => {
-        return (
-                <div className="max-w-5xl mx-auto">
-                        <Navbar />
+  return (
+    <>
+      <div className="max-w-5xl mx-auto">
+        <Navbar />
 
-                        <Outlet/>
+        <Outlet/>            
+      </div>
 
-                        <Footer/>
-                        
-                </div>
-        )
+      <div className="mt-12">
+        <Footer/>
+      </div>
+    </>
+  )
 };
 
 
