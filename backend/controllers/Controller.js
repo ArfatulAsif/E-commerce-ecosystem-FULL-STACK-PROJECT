@@ -456,3 +456,52 @@ exports.getAllOrders = async (req, res) => {
         res.status(500).json({ error: 'Server error' });
     }
 };
+
+
+
+
+exports.getTransactionsByAccount = async (req, res) => {
+    try {
+        const { accountNumber, password } = req.body;
+
+        // Find the user's bank account by account number
+        const userBank = await UserBank.findOne({ accountNumber });
+
+        if (!userBank) {
+            return res.status(400).json({ error: 'Invalid account number' });
+        }
+
+        // Verify the provided password
+        if (userBank.password !== password) {
+            return res.status(400).json({ error: 'Incorrect password' });
+        }
+
+        // Fetch debit transactions
+        const debitTransactions = await Transaction.find({ fromAccountNumber: accountNumber });
+
+        // Fetch credit transactions
+        const creditTransactions = await Transaction.find({ toAccountNumber: accountNumber });
+
+        if (debitTransactions.length === 0 && creditTransactions.length === 0) {
+            return res.status(404).json({ error: 'No transactions found' });
+        }
+
+        // Calculate total debit and credit amounts
+        const totalDebit = debitTransactions.reduce((sum, transaction) => sum + transaction.amount, 0);
+        const totalCredit = creditTransactions.reduce((sum, transaction) => sum + transaction.amount, 0);
+
+        // Current balance is calculated by subtracting total debits from total credits
+        const currentBalance = userBank.balance;
+
+        res.status(200).json({ 
+            debits: debitTransactions, 
+            credits: creditTransactions, 
+            totalDebit, 
+            totalCredit, 
+            currentBalance 
+        });
+    } catch (error) {
+        console.error('Error fetching transactions:', error);
+        res.status(500).json({ error: 'Server error' });
+    }
+};
