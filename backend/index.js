@@ -16,6 +16,12 @@ const PORT = process.env.PORT || 8000;
 connectDB();
 
 app.use('/auth', routes);
+app.use('/product', routes);
+app.use('/buy', routes);
+app.use('/bank', routes);
+app.use('/supply', routes);
+app.use('/get', routes);
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
