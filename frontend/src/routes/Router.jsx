@@ -8,6 +8,7 @@ import Shop from "../pages/Shop/Shop";
 import AuthLayout from "../layouts/AuthLayout/AuthLayout";
 import Login from "../pages/Auth/Login/Login";
 import Register from "../pages/Auth/Register/Register";
+import Product from "../pages/Product/Product";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop />,
+      },
+      {
+        path: "/shop/:id",
+        element: <Product />,
       },
     ],
   },

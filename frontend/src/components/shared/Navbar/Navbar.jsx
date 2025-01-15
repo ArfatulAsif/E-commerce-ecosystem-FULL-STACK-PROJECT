@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
 import PrimaryButton from "../PrimaryButton/PrimaryButton";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setToken(token);
+  }, []);
+
   return (
     <div className="">
       <div className="flex justify-between mx-auto py-4 px-8">
@@ -31,9 +39,17 @@ const Navbar = () => {
           </li>
         </ul>
         <div>
-          <Link to="/auth/login">
-            <PrimaryButton title={"Login"} />
-          </Link>
+          {!token && (
+            <Link to="/auth/login">
+              <PrimaryButton title={"Login"} />
+            </Link>
+          )}
+
+          {token && (
+            <Link to="/dashboard">
+              <PrimaryButton title={"Dashboard"} />
+            </Link>
+          )}
         </div>
       </div>
     </div>

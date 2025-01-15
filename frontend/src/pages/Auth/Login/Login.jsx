@@ -22,6 +22,7 @@ const Login = () => {
         if (res?.data?.token) {
           toast.success("Login successful");
           localStorage.setItem("token", res.data.token);
+          localStorage.setItem("userType", res.data.userType);
           setEmail("");
           setPassword("");
           navigate("/");

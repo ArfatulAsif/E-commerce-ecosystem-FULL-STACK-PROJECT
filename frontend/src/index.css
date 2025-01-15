@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -9,11 +9,35 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: "wdth" 100;
 }
 
 body {
   /* background-color: #F6F6F6; */
   min-height: 100vh;
+}
+
+/* Carousel Styling */
+.carousel .control-dots .dot {
+  background-color: #fdba74; /* Color of inactive dots */
+  opacity: 1;
+  box-shadow: none;
+}
+
+.carousel .control-dots .dot.selected {
+  background-color: #f97316; /* Color of the active dot */
+}
+
+.carousel .thumbs .thumb.selected {
+  border: 2px solid #f97316; /* Custom border color for selected thumbnail */
+  border-radius: 8px; /* Custom border radius for selected thumbnail */
+  opacity: 1; /* Ensure full visibility */
+}
+
+.carousel .thumbs .thumb {
+  border-radius: 8px; /* Apply border radius to all thumbnails */
+}
+
+.carousel .thumbs .thumb:hover {
+  border: 2px solid #818cf8;
 }

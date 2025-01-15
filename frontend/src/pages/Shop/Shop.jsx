@@ -153,16 +153,19 @@ const Shop = () => {
                 <div
                   key={product._id}
                   className="cursor-pointer border border-1 rounded-md p-4 flex gap-6 hover:shadow-md transition-all duration-300"
-                  onClick={() => navigate(product._id)}
                 >
                   <div className="">
                     <img
+                      className="min-w-[150px] max-w-[150px] h-auto object-cover bg-red-600"
+                      onClick={() => navigate(product._id)}
                       src={serverUrl + "/images/" + product?.images[0]}
-                      className="w-[150px] h-auto object-cover"
                     />
                   </div>
                   <div className="flex gap-4 justify-between grow">
-                    <div className="flex flex-col gap-3">
+                    <div
+                      onClick={() => navigate(product._id)}
+                      className="flex flex-col gap-3"
+                    >
                       <h1 className="text-lg">{product.productName}</h1>
                       <div className="flex flex-col gap-1">
                         <h2 className="text-sm text-gray-500">
