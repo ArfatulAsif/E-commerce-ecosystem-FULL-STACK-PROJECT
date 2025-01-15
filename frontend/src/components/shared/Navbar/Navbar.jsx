@@ -31,7 +31,9 @@ const Navbar = () => {
           </li>
         </ul>
         <div>
-          <PrimaryButton title={"Login"} />
+          <Link to="/auth/login">
+            <PrimaryButton title={"Login"} />
+          </Link>
         </div>
       </div>
     </div>
