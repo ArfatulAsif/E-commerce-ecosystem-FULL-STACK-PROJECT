@@ -24,6 +24,7 @@ const Product = () => {
     }
     if (userType != "customer") {
       toast.error("Only users can add product to cart!");
+      return;
     }
 
     // axiosInstance.post
