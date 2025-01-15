@@ -29,12 +29,19 @@ const Navbar = () => {
               Shop
             </li>
           </Link>
+
+          <Link to="/cart">
           <li className="cursor-pointer hover:text-orange-600 transition-all duration-150 font-semibold tracking-wide px-3 py-2 rounded-md">
             Cart
           </li>
+          </Link>
+
+          <Link to="/dashboard">
           <li className="cursor-pointer hover:text-orange-600 transition-all duration-150 font-semibold tracking-wide px-3 py-2 rounded-md">
             Dashboard
           </li>
+          </Link>
+
           <li className="cursor-pointer hover:text-orange-600 transition-all duration-150 font-semibold tracking-wide px-3 py-2 rounded-md">
             Contact
           </li>
@@ -47,8 +54,9 @@ const Navbar = () => {
           )}
 
           {token && (
-            <Link to="/dashboard">
-              <PrimaryButton title={"Dashboard"} icon={<TbLayoutDashboard />} />
+            
+            <Link to="/auth/login">
+              <PrimaryButton title={"logout"} icon={<TbLayoutDashboard />} />
             </Link>
           )}
         </div>

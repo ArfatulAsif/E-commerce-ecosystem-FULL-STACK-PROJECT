@@ -107,13 +107,22 @@ exports.getAllProducts = async (req, res) => {
 
 exports.addToCart = async (req, res) => {
   try {
-      const { supplierId, productId, numberOfItems, deliveryAddress } = req.body;
+      const { productId } = req.body;
+
+      const product = await Product.findById(productId);
+
+      const supplierId  = product.supplierId;
+
+      const numberOfItems = 1; // it is defaultly set to 1
+      const deliveryAddress = "Akhalia Sust, Sylhet 3100";
+
+
 
       if (!supplierId || !productId || !numberOfItems || !deliveryAddress) {
           return res.status(400).json({ error: 'All fields are required' });
       }
 
-      const product = await Product.findById(productId);
+     
 
       if (!product) {
           return res.status(404).json({ error: 'Product not found' });

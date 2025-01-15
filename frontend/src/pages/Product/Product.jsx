@@ -18,34 +18,50 @@ const Product = () => {
     const token = localStorage.getItem("token");
     const userType = localStorage.getItem("userType");
 
-    console.log({ token, userType });
     if (!token) {
       navigate("/auth/login");
+      return;
     }
-    if (userType != "customer") {
+    if (userType !== "customer") {
       toast.error("Only users can add product to cart!");
       return;
     }
 
-    // axiosInstance.post
+    const productId = id;
+
+    axiosInstance.post(
+      "/product/AddToCart",
+      { productId },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    )
+    .then((res) => {
+      toast.success("Product added to cart successfully!");  // Display success message
+      navigate("/shop");
+    })
+    .catch((error) => {
+      console.error(error);
+      toast.error("Failed to add product to cart!");
+    });
   };
 
   useEffect(() => {
     axiosInstance
       .post("/product/productbyid", { productId: id })
       .then((res) => {
-        console.log(res.data);
         setProduct(res.data);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       })
       .finally(() => {
         setIsLoading(false);
       });
   }, [id]);
 
-  console.log(id);
   return (
     <div className="px-8 py-4">
       {!isLoading && product && (
