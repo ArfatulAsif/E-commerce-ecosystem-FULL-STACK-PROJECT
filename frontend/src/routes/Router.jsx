@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import Bank from "../pages/Bank/bank";
 import BankLayout from "../layouts/BankLayout/BankLayout";
 import Transaction from "../pages/transaction/transaction";
+import Shop from "../pages/Shop/Shop";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/shop",
+        element: <Shop />,
       },
     ],
   },
@@ -29,10 +34,6 @@ const router = createBrowserRouter([
         element: <Transaction />,
       },
     ],
-  },
-  {
-    path: "/shop",
-    element: <h1>hi</h1>,
   },
 ]);
 
