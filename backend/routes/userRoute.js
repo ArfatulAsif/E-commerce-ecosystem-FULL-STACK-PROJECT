@@ -16,7 +16,7 @@ router.get('/getAllOrdersCustomer', authMiddleware.isCustomer, authController.ge
 router.get('/getAllPendingOrdersSupplier', authMiddleware.isSupplier, authController.getAllPendingOrdersForSupplier);
 router.get('/getAllDeliveredOrdersSupplier', authMiddleware.isSupplier, authController.getAllDeliveredOrdersForSupplier);
 router.get('/getAllOrders', authMiddleware.isAdmin, authController.getAllOrders);
-router.get('/transaction', authController.getTransactionsByAccount);
+router.post('/transaction', authController.postTransactionsByAccount);
 
 
 module.exports = router;

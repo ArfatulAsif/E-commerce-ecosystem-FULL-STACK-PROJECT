@@ -4,7 +4,7 @@ const Footer = () => {
       <section className="pt-16 pb-7 bg-black">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between pb-14 border-b border-gray-500 gap-8">
-            <a href="https://pagedone.io/" className="">
+            <a href="/" className="">
               <svg xmlns="http://www.w3.org/2000/svg" width="166" height="33" viewBox="0 0 166 33" fill="none">
                 <path
                   d="M47.71 24.7231V7H55.0832C55.2567 7 55.4797 7.00821 55.7524 7.02462C56.025 7.03282 56.2769 7.05744 56.5083 7.09846C57.5409 7.25436 58.3918 7.59487 59.061 8.12C59.7384 8.64513 60.2382 9.30974 60.5604 10.1138C60.8909 10.9097 61.0561 11.7959 61.0561 12.7723C61.0561 13.7405 60.8909 14.6267 60.5604 15.4308C60.23 16.2267 59.726 16.8872 59.0486 17.4123C58.3795 17.9374 57.5327 18.2779 56.5083 18.4338C56.2769 18.4667 56.0208 18.4913 55.74 18.5077C55.4673 18.5241 55.2484 18.5323 55.0832 18.5323H50.6964V24.7231H47.71ZM50.6964 15.7631H54.9593C55.1245 15.7631 55.3104 15.7549 55.5169 15.7385C55.7234 15.7221 55.9134 15.6892 56.0869 15.64C56.5826 15.5169 56.9709 15.2995 57.2518 14.9877C57.5409 14.6759 57.7433 14.3231 57.859 13.9292C57.9829 13.5354 58.0449 13.1497 58.0449 12.7723C58.0449 12.3949 57.9829 12.0092 57.859 11.6154C57.7433 11.2133 57.5409 10.8564 57.2518 10.5446C56.9709 10.2328 56.5826 10.0154 56.0869 9.89231C55.9134 9.84308 55.7234 9.81436 55.5169 9.80615C55.3104 9.78974 55.1245 9.78154 54.9593 9.78154H50.6964V15.7631Z"
@@ -76,7 +76,7 @@ const Footer = () => {
           <div className="py-14 flex flex-col lg:flex-row justify-between gap-8 border-b border-gray-500">
             <div className="w-full max-lg:mx-auto flex flex-col sm:flex-row max-lg:items-center max-lg:justify-between gap-6 md:gap-12 lg:gap-24">
               <div className="">
-                <h6 className="text-lg font-medium text-white mb-7 max-lg:text-center">Pagedone</h6>
+                <h6 className="text-lg font-medium text-white mb-7 max-lg:text-center">LEVEL UP</h6>
                 <ul className="flex flex-col max-lg:items-center gap-6">
                   <li><a href="javascript:;"
                       className="text-base font-normal max-lg:text-center text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-orange-400 focus-within:outline-0 focus-within:text-orange-400">Home</a>
@@ -96,17 +96,16 @@ const Footer = () => {
                 <h6 className="text-lg font-medium text-white mb-7 max-lg:text-center">Products</h6>
                 <ul className="flex flex-col gap-6 max-lg:items-center">
                   <li><a href="javascript:;"
-                      className="text-base font-normal text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-orange-400 focus-within:outline-0 focus-within:text-orange-400">Figma
-                      UI System</a></li>
+                      className="text-base font-normal text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-orange-400 focus-within:outline-0 focus-within:text-orange-400"> Gaming Console </a></li>
                   <li><a href="javascript:;"
-                      className="text-base font-normal text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-orange-400 focus-within:outline-0 focus-within:text-orange-400">Icons
-                      Assets</a></li>
+                      className="text-base font-normal text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-orange-400 focus-within:outline-0 focus-within:text-orange-400"> Steering
+                      Wheel</a></li>
                   <li><a href="javascript:;"
                       className="text-base font-normal text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-orange-400 focus-within:outline-0 focus-within:text-orange-400">Responsive
                       Blocks</a></li>
                   <li><a href="javascript:;"
                       className="text-base font-normal text-gray-400 whitespace-nowrap transition-all duration-300 hover:text-orange-400 focus-within:outline-0 focus-within:text-orange-400">Components
-                      Library</a></li>
+                      </a></li>
                 </ul>
               </div>
               <div className="">
@@ -136,7 +135,7 @@ const Footer = () => {
                     </label>
                     <input type="text" id="default-search"
                       className="block w-full px-5 py-3 text-lg font-normal shadow-xs text-white bg-transparent border border-gray-400 rounded-full placeholder-gray-400 focus:outline-none leading-relaxed focus-within:border-gray-300"
-                      placeholder="harsh@pagedone.com" required="" /> 
+                      placeholder="LEVELUP@LEVEL UP.com" required="" /> 
                   </div>
                   <div className="flex flex-col min-[540px]:flex-row items-center justify-between gap-3">
                     <div className="flex items-start black">
@@ -157,7 +156,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-5 pt-7">
             <span className="text-sm font-normal text-gray-400">
-            <a href="https://pagedone.io/" className="">©pagedone</a> 2023, All rights reserved.
+            <a href="https://LEVEL UP.io/" className="">©LEVEL UP</a> 2025, All rights reserved.
             </span>
             <div className="relative  text-gray-500 focus-within:text-gray-900 ">
               <div className="absolute inset-y-0 right-6 flex items-center pl-3 pointer-events-none ">

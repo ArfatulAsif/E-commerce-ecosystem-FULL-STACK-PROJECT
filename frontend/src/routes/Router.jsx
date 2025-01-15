@@ -1,6 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout/MainLayout";
 import Home from "../pages/Home/Home";
+import Bank from "../pages/Bank/bank";
+import BankLayout from "../layouts/BankLayout/BankLayout";
+import Transaction from "../pages/transaction/transaction";
+
 
 
 const router = createBrowserRouter([
@@ -12,10 +16,24 @@ const router = createBrowserRouter([
                         index: true,
                         element : <Home/>
                 },
+                
+        ]
+},
+
+{
+        path: "/bank/",
+        element: <BankLayout/>,
+        children : [
                 {
-                        path : "test2",
-                        element : <h1>this is the test page</h1>
+                        index: true,
+                        element: <Bank />
+                },
+                {
+                        path: "transaction",
+                        element: <Transaction/>
                 }
+                
+                
         ]
 }
 

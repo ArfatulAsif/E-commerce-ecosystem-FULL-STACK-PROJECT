@@ -460,7 +460,7 @@ exports.getAllOrders = async (req, res) => {
 
 
 
-exports.getTransactionsByAccount = async (req, res) => {
+exports.postTransactionsByAccount = async (req, res) => {
     try {
         const { accountNumber, password } = req.body;
 

@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import HomepageCard from '../../components/HomepageCard/HomepageCard';
 
 import cardImageOne from '../../assets/card-image-1.webp'
+import monitorImage from '../../assets/monitor.png'
+import steeringWheelImage from '../../assets/steering-wheel.png'
 
 const Home = () => {
   return (
@@ -55,27 +57,27 @@ const Home = () => {
           color={"#FFE979"} 
           img={cardImageOne} 
           tagColor={"#E0BB00"} 
-          title={"Launch Your First Website"} 
+          title={"You start as a beginner"} 
           subTitle={"For Beginners"} 
-          tags={["Visual Builder", "Nice", "Attractive"]}
+          tags={["Mouse", "Keyboard", "Joy Stick"]}
           link="/page-a"
         />
         <HomepageCard 
           color={"#B7F598"} 
-          img={cardImageOne} 
+          img={monitorImage} 
           tagColor={"#65BA3B"} 
-          title={"Launch Your First Website"} 
-          subTitle={"For Beginners"} 
-          tags={["Visual Builder", "Nice", "Attractive"]}
+          title={"Focus on being a pro"} 
+          subTitle={"For Intermediary"} 
+          tags={["PSP", "Xbox One", "Curve Display"]}
           link="/page-b"
         />  
         <HomepageCard 
           color={"#7ED5F0"} 
-          img={cardImageOne} 
+          img={steeringWheelImage} 
           tagColor={"#1698C0"} 
-          title={"Launch Your First Website"} 
-          subTitle={"For Beginners"} 
-          tags={["Visual Builder", "Nice", "Attractive"]}
+          title={"Go above and beyond"} 
+          subTitle={"For Experts"} 
+          tags={["VR", "3D Effect", "Steering Wheel"]}
           link="/page-c"
         />
       </div>
