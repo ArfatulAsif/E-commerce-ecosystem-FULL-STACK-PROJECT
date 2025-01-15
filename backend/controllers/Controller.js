@@ -1,6 +1,10 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const {User, Product, Order, UserBank, Transaction} = require('../schema/schema');
+const {User, Product, Order, UserBank, Transaction, Chat} = require('../schema/schema');
+const dotenv = require("dotenv");
+dotenv.config();
+
+
 
 
 exports.signUp = async (req, res) => {
@@ -48,7 +52,7 @@ exports.login = async (req, res) => {
 
       const token = jwt.sign({ userId: user._id, userType: user.userType }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-      res.status(200).json({ token });
+      res.status(200).json({ token,  userType: user.userType });
   } catch (error) {
       res.status(500).json({ error: error.message });
   }
@@ -502,6 +506,77 @@ exports.postTransactionsByAccount = async (req, res) => {
         });
     } catch (error) {
         console.error('Error fetching transactions:', error);
+        res.status(500).json({ error: 'Server error' });
+    }
+};
+
+
+
+
+
+exports.chatWithProduct = async (req, res) => {
+    try {
+        const { id, message } = req.body;
+
+        if (!id || !message) {
+            return res.status(400).json({ error: 'Product ID and message are required' });
+        }
+
+        // Retrieve the product details
+        const product = await Product.findById(id);
+        if (!product) {
+            return res.status(404).json({ error: 'Product not found' });
+        }
+
+        const productDetails = `
+            Product Name: ${product.productName}
+            Description: ${product.description}
+            Category: ${product.category}
+            Price: $${product.price}
+            Stock: ${product.stock}
+            Total Sold: ${product.totalSold}
+        `;
+
+        // Fetch the last two messages for this product
+        const chatHistory = await Chat.find({ productId: id })
+            .sort({ timestamp: -1 }) // Sort by newest first
+            .limit(2) // Fetch at most two messages
+            .select('userMessage botReply -_id');
+
+        // Reverse the order to maintain chronological sequence
+        const chatMessages = chatHistory.reverse().map(chat => [
+            { role: 'user', content: chat.userMessage },
+            { role: 'assistant', content: chat.botReply },
+        ]).flat();
+
+        // Create the message array for the current conversation
+        const messages = [
+            { role: 'system', content: 'You are a customer support chatbot for an e-commerce platform. Assist the user with product inquiries.' },
+            { role: 'user', content: `Product details:\n${productDetails}` },
+            ...chatMessages, // Add the last two messages
+            { role: 'user', content: message },
+        ];
+
+        // Create a chat completion with OpenAI
+        const response = await openai.createChatCompletion({
+            model: 'gpt-4',
+            messages: messages,
+        });
+
+        const botReply = response.data.choices[0].message.content;
+
+        // Save the new chat message
+        const newChat = new Chat({
+            productId: id,
+            userMessage: message,
+            botReply: botReply,
+        });
+
+        await newChat.save();
+
+        res.status(200).json({ botReply, chatId: newChat._id });
+    } catch (error) {
+        console.error('Error communicating with chatbot:', error);
         res.status(500).json({ error: 'Server error' });
     }
 };

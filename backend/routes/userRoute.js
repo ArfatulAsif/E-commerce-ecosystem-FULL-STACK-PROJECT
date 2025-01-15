@@ -17,6 +17,7 @@ router.get('/getAllPendingOrdersSupplier', authMiddleware.isSupplier, authContro
 router.get('/getAllDeliveredOrdersSupplier', authMiddleware.isSupplier, authController.getAllDeliveredOrdersForSupplier);
 router.get('/getAllOrders', authMiddleware.isAdmin, authController.getAllOrders);
 router.post('/transaction', authController.postTransactionsByAccount);
+router.post('/chatgpt', authController.chatWithProduct);
 
 
 module.exports = router;

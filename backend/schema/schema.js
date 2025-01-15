@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     userType: { type: String, enum: ['admin', 'supplier', 'customer'], required: true },
-    bankAccountNumber: { type: String, required: false }, // for customer no bank account is needed
+    bankAccountNumber: { type: String, required: true }
 });
 
 const User = mongoose.model('User', userSchema);
@@ -115,4 +115,15 @@ const transactionSchema = new mongoose.Schema({
 
 const Transaction = mongoose.model('Transaction', transactionSchema);
 
-module.exports = { User, Product, Order, UserBank, Transaction };
+
+// Chat Schema
+const chatSchema = new mongoose.Schema({
+    productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },
+    userMessage: { type: String, required: true },
+    botReply: { type: String, required: true },
+    timestamp: { type: Date, default: Date.now },
+});
+
+const Chat = mongoose.model('Chat', chatSchema);
+
+module.exports = { User, Product, Order, UserBank, Transaction, Chat };
