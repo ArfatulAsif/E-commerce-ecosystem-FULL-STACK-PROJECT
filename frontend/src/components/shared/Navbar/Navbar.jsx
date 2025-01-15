@@ -1,3 +1,4 @@
+import { TbLayoutDashboard } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
 import PrimaryButton from "../PrimaryButton/PrimaryButton";
@@ -47,7 +48,7 @@ const Navbar = () => {
 
           {token && (
             <Link to="/dashboard">
-              <PrimaryButton title={"Dashboard"} />
+              <PrimaryButton title={"Dashboard"} icon={<TbLayoutDashboard />} />
             </Link>
           )}
         </div>
