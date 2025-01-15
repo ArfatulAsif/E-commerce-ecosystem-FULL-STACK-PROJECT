@@ -5,6 +5,9 @@ import Bank from "../pages/Bank/bank";
 import BankLayout from "../layouts/BankLayout/BankLayout";
 import Transaction from "../pages/transaction/transaction";
 import Shop from "../pages/Shop/Shop";
+import AuthLayout from "../layouts/AuthLayout/AuthLayout";
+import Login from "../pages/Auth/Login/Login";
+import Register from "../pages/Auth/Register/Register";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +21,20 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop />,
+      },
+    ],
+  },
+  {
+    path: "/auth",
+    element: <AuthLayout />,
+    children: [
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Register />,
       },
     ],
   },
