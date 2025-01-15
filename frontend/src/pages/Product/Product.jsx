@@ -18,7 +18,7 @@ const Product = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [product]);
 
   const images = [
     {
