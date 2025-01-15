@@ -5,13 +5,16 @@ import { IoGameControllerOutline } from "react-icons/io5";
 import PrimaryButton from "../../components/shared/PrimaryButton/PrimaryButton";
 import { useEffect, useState } from "react";
 import axiosInstance, { serverUrl } from "../../utils/axiosInstance";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Shop = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [searchString, setSearchString] = useState("");
   const [allProducts, setAllProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [visibleProducts, setVisibleProducts] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     axiosInstance.get("/product/allproducts").then((res) => {
@@ -33,12 +36,41 @@ const Shop = () => {
     }
   }, [allProducts, selectedCategory]);
 
+  useEffect(() => {
+    if (searchString === "") {
+      resetSearch();
+    }
+  }, [searchString]);
+
+  const resetSearch = () => {
+    setSearchString("");
+    setVisibleProducts(allProducts);
+    setSelectedCategory("All");
+  };
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+
+    const lowercasedSearchString = searchString.toLowerCase();
+
+    const filteredProducts = allProducts.filter(
+      (product) =>
+        product.productName.toLowerCase().includes(lowercasedSearchString) ||
+        product.description.toLowerCase().includes(lowercasedSearchString)
+    );
+
+    setSelectedCategory("All");
+    setVisibleProducts(filteredProducts);
+  };
+
   return (
     <div className="px-8 my-6">
       {/* Search bar */}
-      <form className="flex gap-6 items-center">
+      <form onSubmit={handleSearch} className="flex gap-6 items-center">
         <label className="input input-bordered flex items-center gap-2 grow">
           <input
+            value={searchString}
+            onChange={(e) => setSearchString(e.target.value)}
             type="text"
             className="grow outline-none ring-0 focus:outline-none focus:ring-0 focus:border-gray-900"
             placeholder="Search"
@@ -107,17 +139,21 @@ const Shop = () => {
 
         {/* Products section */}
         <div className="col-span-3">
-          {isLoading && <h1>Loading...</h1>}
+          {isLoading && (
+            <div className="h-[200px] flex justify-center items-center">
+              <span className="loading loading-spinner text-orange-500"></span>
+            </div>
+          )}
 
           <div className="flex flex-col gap-5">
             {!isLoading &&
               visibleProducts &&
               visibleProducts.length > 0 &&
               visibleProducts.map((product) => (
-                <Link
-                  to={product._id}
+                <div
                   key={product._id}
-                  className="border border-1 rounded-md p-4 flex gap-6 hover:shadow-md transition-all duration-300"
+                  className="cursor-pointer border border-1 rounded-md p-4 flex gap-6 hover:shadow-md transition-all duration-300"
+                  onClick={() => navigate(product._id)}
                 >
                   <div className="">
                     <img
@@ -132,11 +168,11 @@ const Shop = () => {
                         <h2 className="text-sm text-gray-500">
                           ID: {product._id}
                         </h2>
-                        {product.totalSold < product.stock ? (
+                        {product.stock > 0 ? (
                           <h2 className="text-green-500 text-sm">
                             Product in stock{" "}
                             <span className="text-red-400">
-                              ({product.stock - product.totalSold} copies left)
+                              ({product.stock} copies left)
                             </span>
                           </h2>
                         ) : (
@@ -151,12 +187,14 @@ const Shop = () => {
                       </h1>
                     </div>
                   </div>
-                </Link>
+                </div>
               ))}
           </div>
 
           {!isLoading && visibleProducts && visibleProducts.length === 0 && (
-            <h1>No product found</h1>
+            <div className="h-[200px] flex justify-center items-center border border-1 rounded-md">
+              <h1>No product found</h1>
+            </div>
           )}
         </div>
       </div>
