@@ -28,7 +28,7 @@ app.use("/buy", routes);
 app.use("/bank", routes);
 app.use("/supply", routes);
 app.use("/get", routes);
-app.use("/chat", routes);
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
