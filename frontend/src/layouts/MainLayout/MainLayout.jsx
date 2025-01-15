@@ -5,18 +5,17 @@ import Footer from "../../components/shared/Footer/Footer";
 const MainLayout = () => {
   return (
     <>
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-[1800px] mx-auto">
         <Navbar />
 
-        <Outlet/>            
+        <Outlet />
       </div>
 
       <div className="mt-12">
-        <Footer/>
+        <Footer />
       </div>
     </>
-  )
+  );
 };
-
 
 export default MainLayout;

@@ -5,38 +5,35 @@ import Bank from "../pages/Bank/bank";
 import BankLayout from "../layouts/BankLayout/BankLayout";
 import Transaction from "../pages/transaction/transaction";
 
-
-
 const router = createBrowserRouter([
-{
-        path: "/",
-        element : <MainLayout />,
-        children: [
-                {
-                        index: true,
-                        element : <Home/>
-                },
-                
-        ]
-},
-
-{
-        path: "/bank/",
-        element: <BankLayout/>,
-        children : [
-                {
-                        index: true,
-                        element: <Bank />
-                },
-                {
-                        path: "transaction",
-                        element: <Transaction/>
-                }
-                
-                
-        ]
-}
-
+  {
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+    ],
+  },
+  {
+    path: "/bank/",
+    element: <BankLayout />,
+    children: [
+      {
+        index: true,
+        element: <Bank />,
+      },
+      {
+        path: "transaction",
+        element: <Transaction />,
+      },
+    ],
+  },
+  {
+    path: "/shop",
+    element: <h1>hi</h1>,
+  },
 ]);
 
 export default router;
