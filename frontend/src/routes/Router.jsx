@@ -10,6 +10,8 @@ import Login from "../pages/Auth/Login/Login";
 import Register from "../pages/Auth/Register/Register";
 import Product from "../pages/Product/Product";
 import Cart from "../pages/Cart/Cart";
+import Dashboard from "../pages/Dashboard/Dashboard";
+import SupplierDashboard from "../pages/SupplierDashboard/SupplierDashboard";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
         path: "/cart",
         element: <Cart />,
       },
+      {
+        path: "/dashboard",
+        element: <Dashboard />
+      },
+      {
+        path: "/supplierDashboard",
+        element: <SupplierDashboard/>
+      }
     ],
   },
   {

@@ -55,7 +55,7 @@ const Navbar = () => {
 
           {token && (
             
-            <Link to="/auth/login">
+            <Link to="/auth/login" onClick={() => localStorage.removeItem("token")}>
               <PrimaryButton title={"logout"} icon={<TbLayoutDashboard />} />
             </Link>
           )}
