@@ -1,5 +1,6 @@
 # E-COMMERCE ECOSYSTEM
 
+<img src = "images/LEVEL UP logo.png">
 <br>
 
 # PROJECT INTRODUCTION
@@ -35,11 +36,66 @@ This project focuses on simulating the core functionality of an e-commerce syste
 
 - ![MongoDB](https://img.icons8.com/color/48/000000/mongodb.png) **MongoDB**: A NoSQL database for managing user, product, and transaction data.  
 
-### Authentication  
 
-- ![JWT](https://img.icons8.com/?size=48&id=rHpveptSuwDz&format=png) **JSON Web Token (JWT)**: For verifying user sessions and ensuring secure access to API endpoints.  
 
-### Utilities  
 
-- ![Axios](https://img.icons8.com/color/48/000000/cloud.png) **Axios**: For handling API calls efficiently between the frontend and backend.  
+# Core Features  
 
+## 1. **Authentication**  
+- **Login & Signup**: Secure user registration and login for customers, suppliers, admins, and bank users.  
+- **Session Management**: Protect all user sessions and API access with JWT authentication.  
+
+<img src="images_core/1_login.jpeg">  
+<img src="images_core/2_signup.jpeg">  
+
+## 2. **Home Page**  
+- **Product Showcase**: Displays all available products categorized by user experience level (Beginner, Intermediate, Expert).  
+- **Responsive Design**: User-friendly interface across all devices.  
+
+<img src="images_core/3_home.jpeg">  
+
+## 3. **Shop Page**  
+- **Product Browsing**: Logged-in customers can view and select products for purchase.  
+- **Product Details**: Includes price, description, and quantity options.  
+
+<img src="images_core/4_shop.jpeg">  
+
+## 4. **Cart Management**  
+- **Cart Page**: Shows all items added to the cart with options to update quantity or remove items.  
+
+<img src="images_core/5_cart.jpeg">  
+
+## 5. **Payment Gateway**  
+- **Bank Integration**: Customers enter their bank number and password to complete purchases securely.  
+- **Transaction Validation**: Ensures funds are debited correctly, with a success or failure message displayed to the user.  
+
+<img src="images_core/6_payment.jpeg">  
+
+## 6. **Dashboards**  
+
+### Customer Dashboard  
+- **Order History**: Displays all purchased products with status (Pending or Delivered).  
+
+<img src="images_core/7_customer_dashboard.jpeg">  
+
+### Supplier Dashboard  
+- **Order Management**: Shows all pending and delivered orders for the supplier.  
+
+<img src="images_core/8_supplier_dashboard.jpeg">  
+
+### Admin Dashboard  
+- **System Logs**: Displays all transactions, user activity, and system interactions for monitoring.  
+
+<img src="images_core/9_admin_dashboard.jpeg">  
+
+## 7. **Bank System**  
+
+### Bank Login Page  
+- **User Access**: Secure login for bank account holders.  
+
+<img src="images_core/10_bank_login.jpeg">  
+
+### Transaction Page  
+- **Transaction History**: Displays all debits, credits, and current balance for the logged-in user.  
+
+<img src="images_core/11_transaction_page.jpeg">  
