@@ -68,20 +68,25 @@ This project focuses on simulating the core functionality of an e-commerce syste
 - **Product Browsing**: Logged-in customers can view and select products for purchase.  
 - **Product Details**: Includes price, description, and quantity options.  
 
-<img src="images_core/4_shop.jpeg">  
+<img src="images_core/4_shop.jpeg"> 
 
-## 4. **Cart Management**  
+## 4. **Product Page**  
+- **Product View & Add to cart**: View product in detail and add to cart
+
+<img src="images_core/4_4.jpeg"> 
+
+## 5. **Cart Management**  
 - **Cart Page**: Shows all items added to the cart with options to update quantity or remove items.  
 
 <img src="images_core/5_cart.jpeg">  
 
-## 5. **Payment Gateway**  
+## 6. **Payment Gateway**  
 - **Bank Integration**: Customers enter their bank number and password to complete purchases securely.  
 - **Transaction Validation**: Ensures funds are debited correctly, with a success or failure message displayed to the user.  
 
 <img src="images_core/6_payment.jpeg">  
 
-## 6. **Dashboards**  
+## 7. **Dashboards**  
 
 ### Customer Dashboard  
 - **Order History**: Displays all purchased products with status (Pending or Delivered).  
@@ -102,7 +107,9 @@ This project focuses on simulating the core functionality of an e-commerce syste
 
 # AIA BANK
 
-## 7. **Bank System**  
+The **Bank** is a seperate identity, access it via **/bank** address, example **http://localhost:5173/bank**.
+
+## 8. **Bank System**  
 
 ### Bank Login Page  
 - **User Access**: Secure login for bank account holders.  
