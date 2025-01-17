@@ -18,10 +18,12 @@ This project focuses on simulating the core functionality of an e-commerce syste
 ## Technologies Used  
 
 ### Frontend  
-
-- ![React.js](https://img.icons8.com/color/48/000000/react-native.png) **React.js**: For building the user interface of the e-commerce website.  
+- ![HTML](https://img.icons8.com/color/48/000000/html-5.png) **HTML**: To structure the web content.
+- ![CSS](https://img.icons8.com/color/48/000000/css3.png) **CSS**: For styling the web project.
+- ![React.js](https://img.icons8.com/color/48/000000/react-native.png) **React.js**: For building the user interface of the e-commerce website.
+- ![React Router](https://i.ibb.co/19d5sDG/react-router-svg.png) **React Router**: For declarative routing in React applications.
 - ![Tailwind CSS](https://img.icons8.com/color/48/000000/tailwindcss.png) **Tailwind CSS**: A utility-first CSS framework for designing responsive and modern UI components.  
-- ![DaisyUI](https://i.ibb.co/nj4HYHB/daisyui.png) **DaisyUI**: A Tailwind CSS-based UI framework to enhance styling with prebuilt components.  
+- ![DaisyUI](https://img.icons8.com/?size=100&id=RPyoS0c4Zki1&format=png&color=000000) **DaisyUI**: A Tailwind CSS-based UI framework to enhance styling with prebuilt components.  
 
 ### Backend  
 
