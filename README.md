@@ -119,7 +119,7 @@ This project focuses on simulating the core functionality of an e-commerce syste
 Clone this repo and create a `.env` file at the backend folder
 
 ```
-PORT=
+PORT=8000
 JWT_SECRET=
 MONGO_DB=
 ```
