@@ -43,8 +43,13 @@ This project focuses on simulating the core functionality of an e-commerce syste
 
 <img src="images_core/activity_diagram.png">
 
+<br>
 
-# Core Features  
+# Core Features
+
+<br>
+
+# LEVEL UP 
 
 ## 1. **Authentication**  
 - **Login & Signup**: Secure user registration and login for customers, suppliers, admins, and bank users.  
@@ -92,6 +97,10 @@ This project focuses on simulating the core functionality of an e-commerce syste
 - **System Logs**: Displays all transactions, user activity, and system interactions for monitoring.  
 
 <img src="images_core/9_admin_dashboard.jpeg">  
+
+<br>
+
+# AIA BANK
 
 ## 7. **Bank System**  
 
