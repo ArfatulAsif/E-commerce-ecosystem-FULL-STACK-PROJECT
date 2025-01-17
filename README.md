@@ -1,6 +1,6 @@
 # E-COMMERCE ECOSYSTEM
 
-<img src = "images/LEVEL UP logo.png">
+<img src = "images_core/LEVEL UP logo.png">
 <br>
 
 # PROJECT INTRODUCTION
@@ -36,7 +36,12 @@ This project focuses on simulating the core functionality of an e-commerce syste
 
 - ![MongoDB](https://img.icons8.com/color/48/000000/mongodb.png) **MongoDB**: A NoSQL database for managing user, product, and transaction data.  
 
+<br>
 
+
+# Activity Diagram
+
+<img src="images_core/activity_diagram.png">
 
 
 # Core Features  
@@ -99,3 +104,57 @@ This project focuses on simulating the core functionality of an e-commerce syste
 - **Transaction History**: Displays all debits, credits, and current balance for the logged-in user.  
 
 <img src="images_core/11_transaction_page.jpeg">  
+
+<br>
+
+# Database Schema
+
+<img src="images_core/Database.png"> 
+
+<br>
+
+
+# Manual Setup 🧑‍💻
+
+Clone this repo and create a `.env` file at the backend folder
+
+```
+PORT=
+JWT_SECRET=
+MONGO_DB=
+```
+
+## Backend:
+
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Frontend:
+
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
