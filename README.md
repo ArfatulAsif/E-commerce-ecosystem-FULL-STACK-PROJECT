@@ -55,53 +55,53 @@ This project focuses on simulating the core functionality of an e-commerce syste
 - **Login & Signup**: Secure user registration and login for customers, suppliers, admins, and bank users.  
 - **Session Management**: Protect all user sessions and API access with JWT authentication.  
 
-<img src="images_core/1_login.jpeg">  
-<img src="images_core/2_signup.jpeg">  
+<img src="images_core/1.png">  
+<img src="images_core/2.png">  
 
 ## 2. **Home Page**  
 - **Product Showcase**: Displays all available products categorized by user experience level (Beginner, Intermediate, Expert).  
 - **Responsive Design**: User-friendly interface across all devices.  
 
-<img src="images_core/3_home.jpeg">  
+<img src="images_core/3.gif">  
 
 ## 3. **Shop Page**  
 - **Product Browsing**: Logged-in customers can view and select products for purchase.  
 - **Product Details**: Includes price, description, and quantity options.  
 
-<img src="images_core/4_shop.jpeg"> 
+<img src="images_core/4.png"> 
 
 ## 4. **Product Page**  
 - **Product View & Add to cart**: View product in detail and add to cart
 
-<img src="images_core/4_4.jpeg"> 
+<img src="images_core/4_4.png"> 
 
 ## 5. **Cart Management**  
 - **Cart Page**: Shows all items added to the cart with options to update quantity or remove items.  
 
-<img src="images_core/5_cart.jpeg">  
+<img src="images_core/5.png">  
 
 ## 6. **Payment Gateway**  
 - **Bank Integration**: Customers enter their bank number and password to complete purchases securely.  
 - **Transaction Validation**: Ensures funds are debited correctly, with a success or failure message displayed to the user.  
 
-<img src="images_core/6_payment.jpeg">  
+<img src="images_core/6.png">  
 
 ## 7. **Dashboards**  
 
 ### Customer Dashboard  
 - **Order History**: Displays all purchased products with status (Pending or Delivered).  
 
-<img src="images_core/7_customer_dashboard.jpeg">  
+<img src="images_core/7.png">  
 
 ### Supplier Dashboard  
 - **Order Management**: Shows all pending and delivered orders for the supplier.  
 
-<img src="images_core/8_supplier_dashboard.jpeg">  
+<img src="images_core/8.png">  
 
 ### Admin Dashboard  
 - **System Logs**: Displays all transactions, user activity, and system interactions for monitoring.  
 
-<img src="images_core/9_admin_dashboard.jpeg">  
+<img src="images_core/9.png">  
 
 <br>
 
@@ -114,12 +114,12 @@ The **Bank** is a seperate identity, access it via **/bank** address, example **
 ### Bank Login Page  
 - **User Access**: Secure login for bank account holders.  
 
-<img src="images_core/10_bank_login.jpeg">  
+<img src="images_core/10.png">  
 
 ### Transaction Page  
 - **Transaction History**: Displays all debits, credits, and current balance for the logged-in user.  
 
-<img src="images_core/11_transaction_page.jpeg">  
+<img src="images_core/11.png">  
 
 <br>
 
