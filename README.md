@@ -124,6 +124,9 @@ JWT_SECRET=
 MONGO_DB=
 ```
 
+Create `customer` or `supplier` type of user using the system. Create `admin` type of user, using the `signup` api and manually entering user type as `admin`.
+Start using the system.
+
 ## Backend:
 
 1. Navigate to the backend directory:
