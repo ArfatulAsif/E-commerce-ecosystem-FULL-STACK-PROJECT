@@ -41,7 +41,7 @@ This project focuses on simulating the core functionality of an e-commerce syste
 
 # Activity Diagram
 
-<img src="images_core/activity_diagram.png">
+<img src="images_core/Activity_diagram.png">
 
 <br>
 
